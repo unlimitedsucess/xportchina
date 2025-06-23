@@ -30,7 +30,7 @@ export default function ConfirmBar() {
   return (
     <>
       <div
-        className={`mx-auto fixed bottom-0 left-0 right-0 z-50 w-full max-w-[720px] px-4 sm:px-6 py-4 bg-blue-600 rounded-t-lg  ${
+        className={`mx-auto fixed bottom-0 mb-[10px] left-0 right-0 z-50 w-full max-w-[620px] px-4 sm:px-6 py-4 bg-blue-600 rounded-lg  ${
           isCartPage
             ? "flex justify-center relative"
             : "flex justify-between items-center"

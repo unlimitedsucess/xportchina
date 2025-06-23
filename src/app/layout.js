@@ -2,6 +2,7 @@ import ConfirmBar from "@/components/ConfIrmBar";
 import "./globals.css";
 import Header from "@/components/Header";
 import Providers from "@/components/Providers";
+import Footer from "@/components/Footer";
 
 export const metadata = {
   title: "Xport China || ASIC Miners",
@@ -16,6 +17,7 @@ export default function RootLayout({ children }) {
           <Header />
           <div className="mb-20">{children}</div> n
           <ConfirmBar/>
+          <Footer />
         </Providers>
       </body>
     </html>
