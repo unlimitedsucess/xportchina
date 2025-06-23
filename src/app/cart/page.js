@@ -3,6 +3,7 @@
 import { useSelector } from "react-redux";
 import { useState } from "react";
 import ItemsSelected from "@/components/ItemsSelected";
+import PhoneModal from "@/components/PhoneModal";
 
 export default function CartPage() {
   const cart = useSelector((state) => state.cart.cart);
@@ -10,7 +11,7 @@ export default function CartPage() {
   const [coupon, setCoupon] = useState("");
   const [phone, setPhone] = useState("+130000000000");
   const [showPhoneModal, setShowPhoneModal] = useState(false);
-  const [newPhone, setNewPhone] = useState("");
+ 
 
   const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
   const totalPrice = cart.reduce((acc, item) => {
@@ -28,9 +29,9 @@ export default function CartPage() {
     <main className="pt-24 px-4 pb-12 bg-white min-h-screen w-full m-auto">
       {/* Coupon Modal */}
       {showCouponModal && (
-        <div className="fixed inset-0 z-50 bg-black bg-opacity-50 flex justify-center items-center">
+        <div className="fixed inset-0 z-50 bg-black bg-opacity-50  text-black flex justify-center items-center">
           <div className="bg-white w-[90%] max-w-md p-5 rounded-lg shadow-lg">
-            <h2 className="text-xl font-semibold mb-3">Enter Coupon Code</h2>
+            <h2 className="font-RobotoMedium text-[18px] text-black mb-3">Enter Coupon Code</h2>
             <input
               type="text"
               value={coupon}
@@ -58,44 +59,7 @@ export default function CartPage() {
 
       {/* Phone Modal */}
       {showPhoneModal && (
-        <div className="fixed inset-0 z-50 bg-black bg-opacity-50 flex justify-center items-center">
-          <div className="bg-white w-[90%] max-w-md p-5 rounded-lg shadow-lg">
-            <h2 className="text-lg font-medium mb-3">Update Mobile Number</h2>
-            <label className="text-sm mb-1">
-              Enter new number with country code
-            </label>
-            <input
-              type="tel"
-              value={newPhone}
-              onChange={(e) => setNewPhone(e.target.value)}
-              placeholder="+2348012345678"
-              className="w-full border border-gray-300 rounded px-4 py-2 mb-4"
-            />
-            <div className="flex justify-end gap-3">
-              <button
-                onClick={() => {
-                  setShowPhoneModal(false);
-                  setNewPhone("");
-                }}
-                className="px-4 py-2 rounded bg-gray-200"
-              >
-                Cancel
-              </button>
-              <button
-                onClick={() => {
-                  if (newPhone.trim()) {
-                    setPhone(newPhone);
-                    setNewPhone("");
-                    setShowPhoneModal(false);
-                  }
-                }}
-                className="px-4 py-2 rounded bg-blue-600 text-white"
-              >
-                Save
-              </button>
-            </div>
-          </div>
-        </div>
+         <PhoneModal setShowPhoneModal={setShowPhoneModal} setPhone={setPhone} />
       )}
 
       {/* Main Content */}
