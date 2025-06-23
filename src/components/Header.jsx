@@ -21,6 +21,18 @@ export default function Header() {
   return (
     <header className="bg-white h-[57px] shadow-custom-header w-full fixed z-30">
       <div className="flex justify-between px-4 sm:px-5 items-center h-full w-full relative">
+        {!isHome && !isSearchPage && (
+          <button
+            onClick={() => router.back()}
+            className="mr-2"
+            aria-label="Go back"
+          >
+            <svg fill="#2547ad" width="30" height="30" viewBox="0 0 28 25">
+              <path d="M10 4.93L2.93 12 10 19.07 11.5 17.57 6.93 13H21v-2H6.93l4.57-4.57L10 4.93z" />
+            </svg>
+          </button>
+        )}
+
         {isSearchPage ? (
           <div className="w-full flex items-center gap-2">
             <button
@@ -95,10 +107,7 @@ export default function Header() {
                 >
                   Instagram: @xportchina
                 </a>
-                <Link
-                  href="/"
-                  className="text-sm font-medium text-gray-800"
-                >
+                <Link href="/" className="text-sm font-medium text-gray-800">
                   Tiktok: @xportchinaasic
                 </Link>
                 <a
@@ -148,7 +157,12 @@ export default function Header() {
                     onClick={() => setMenuOpen(false)}
                     aria-label="Close menu"
                   >
-                    <svg width="24" height="24" viewBox="0 0 24 24" stroke="#000">
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      stroke="#000"
+                    >
                       <line x1="18" y1="6" x2="6" y2="18" strokeWidth="2" />
                       <line x1="6" y1="6" x2="18" y2="18" strokeWidth="2" />
                     </svg>
