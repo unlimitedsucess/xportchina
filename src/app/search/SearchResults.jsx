@@ -22,7 +22,7 @@ export default function SearchResults() {
       {!query || query.trim() === "" ? (
         <p className="text-black text-base text-center sm:text-left">
           Search products by{" "}
-          <span className="font-medium">
+          <span className="font-RobotoMedium">
             SKU, title, description, price, tags, colors
           </span>
           , etc.
@@ -53,7 +53,7 @@ export default function SearchResults() {
                       className="w-full h-[120px] sm:h-[140px] object-cover rounded"
                     />
                   </Link>
-                  <h2 className="text-sm mt-2 font-medium text-black truncate">
+                  <h2 className="text-sm mt-2 font-RobotoMedium text-black truncate">
                     {product.title}
                   </h2>
                   <p className="text-xs text-gray-600 mb-2">{product.price}</p>

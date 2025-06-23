@@ -46,7 +46,7 @@ export default function ItemsSelected() {
                 className="rounded object-cover"
               />
               <div className="flex flex-col justify-between w-full">
-                <h2 className="font-medium text-sm text-black">{item.title}</h2>
+                <h2 className="font-RobotoMedium text-sm text-black">{item.title}</h2>
                 <div className="flex items-center gap-2 mt-1">
                   <button
                     className="px-2 py-1 bg-gray-200 rounded"

@@ -43,7 +43,7 @@ export default function Footer() {
       </div>
       <div className="w-full flex justify-end z-70 fixed bottom-2 px-4">
         <div className="w-fit  ">
-          <Link className="flex items-center  rounded-2xl bg-ffffff  px-2.5 py-1.5 w-[97px]" href="/">
+          <a className="flex items-center  rounded-2xl bg-ffffff  px-2.5 py-1.5 w-[97px]" href="https://wa.me/17023197242">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 48 48"
@@ -76,7 +76,7 @@ export default function Footer() {
             ></path>
           </svg>
           <span className="text-black font-RobotoBold text-base">CHAT</span>
-        </Link>
+        </a>
         </div>
       </div>
     </footer>

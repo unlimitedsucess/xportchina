@@ -106,20 +106,20 @@ export default function Header() {
                   href="https://t.me/Xportchina_exclusivo"
                   target="_blank"
                   rel="noreferrer"
-                  className="text-sm font-medium text-gray-800"
-                >
-                  Instagram: @xportchina
-                </a>
-                <Link href="/" className="text-sm font-medium text-gray-800">
-                  Tiktok: @xportchinaasic
-                </Link>
-                <a
-                  href="https://t.me/Xportchina_exclusivo"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-sm font-medium text-gray-800"
+                  className="text-sm font-RobotoMedium text-gray-800"
                 >
                   Telegram: @xportchina
+                </a>
+                <a href="/ https://wa.me/17023197242" className="text-sm font-RobotoMedium text-gray-800">
+                  Whatsapp: @xportchinaasic
+                </a>
+                <a
+                  href="mailto:xportchinaexclusive@gmail.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-sm font-RobotoMedium text-gray-800"
+                >
+                  Gmail: @xportchina
                 </a>
               </div>
             </div>
@@ -175,23 +175,23 @@ export default function Header() {
                     href="https://t.me/Xportchina_exclusivo"
                     target="_blank"
                     rel="noreferrer"
-                    className="mb-3 text-sm font-medium text-gray-800"
-                  >
-                    Instagram: @xportchina
-                  </a>
-                  <Link
-                    href="/"
-                    className="mb-3 text-sm font-medium text-gray-800"
-                  >
-                    Tiktok: @xportchinaasic
-                  </Link>
-                  <a
-                    href="https://t.me/Xportchina_exclusivo"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="mb-3 text-sm font-medium text-gray-800"
+                    className="mb-3 text-sm font-RobotoMediu text-gray-800"
                   >
                     Telegram: @xportchina
+                  </a>
+                  <a
+                    href="https://wa.me/17023197242"
+                    className="mb-3 text-sm font-RobotoMedium text-gray-800"
+                  >
+                    Whatsapp: @xportchinaasic
+                  </a>
+                  <a
+                    href="mailto:xportchinaexclusive@gmail.com"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mb-3 text-sm font-RobotoMedium text-gray-800"
+                  >
+                    Gmail: @xportchina
                   </a>
                 </div>
                 <div
