@@ -349,7 +349,7 @@ const products = [
     slug: "Bitmain-Antminer-S19-pro-110",
     title: "Bitmain Antminer S19 pro 110 THS",
     price: "$440",
-    img: "/images/secondhand/secondhandp.jpg",
+    img: "/images/secondhand/secondhandP.jpg",
     details: {
       sku: " SKU: 1 año de garantía sin costo adicional. Equipos en perfecto estado.",
     },
