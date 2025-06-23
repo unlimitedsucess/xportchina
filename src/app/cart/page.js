@@ -228,7 +228,6 @@ export default function CartPage() {
     </main>
   );
 }
-"use client";
 
 import { useSelector } from "react-redux";
 import { useState } from "react";
