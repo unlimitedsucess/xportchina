@@ -446,11 +446,11 @@ export default function CartPage() {
             </div>
             <div>
               <label className="block mb-1 text-sm">State</label>
-              <input type="text" className="w-full border px-3 py-2 rounded" />
+              <input type="text" className="w-full border px-3 py-2 rounded"/>
             </div>
             <div>
               <label className="block mb-1 text-sm">City</label>
-              <input type="text" className="w-full border px-3 py-2 rounded" />
+              <input type="text" className="w-full border px-3 py-2 rounded"/>
             </div>
           </form>
         </div>
