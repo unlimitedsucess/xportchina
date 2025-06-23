@@ -26,7 +26,7 @@ export default function CartPage() {
   };
 
   return (
-    <main className="pt-24 px-4 pb-12 bg-white min-h-screen w-full m-auto">
+    <main className="pt-24 px-4 pb-12 min-h-screen w-full m-auto">
       {/* Coupon Modal */}
       {showCouponModal && (
         <div className="fixed inset-0 z-50 bg-black bg-opacity-50  text-black flex justify-center items-center">

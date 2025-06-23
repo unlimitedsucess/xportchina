@@ -66,7 +66,7 @@ export default function ItemRouts() {
   const renderBox = (item) => (
     <div
       key={item.slug}
-      className="bg-ffffff mt-5 h-[320px] rounded-[12px] w-[229px] cursor-pointer shadow-md hover:shadow-lg transition-shadow"
+      className=" mt-5 h-[320px] rounded-[12px] w-[229px] cursor-pointer shadow-md hover:shadow-lg transition-shadow"
       onClick={(e) => handleClick(item.slug, e)}
     >
       <Image

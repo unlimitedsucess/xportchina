@@ -49,7 +49,7 @@ useEffect(() => {
   const related = categoryProducts.filter((p) => p.slug !== slug);
 
   return (
-    <main className="pt-24 px-5 pb-12 bg-white min-h-screen">
+    <main className="pt-24 px-5 pb-12  min-h-screen">
       <div className="w-full h-fit relative px-5">
         <button
           onClick={handlePrev}

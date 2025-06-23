@@ -48,10 +48,10 @@ export default function CategoryPage() {
 
   if (isLoading) {
     return (
-      <main className="flex gap-6 pt-24 px-6 pb-12 bg-white min-h-screen">
-        <div className="w-64 bg-gray-100 rounded-lg p-4 animate-pulse"></div>
+      <main className="flex gap-6 pt-24 px-6 pb-12  min-h-screen">
+        <div className="w-64 rounded-lg p-4 animate-pulse"></div>
         <div className="flex-1">
-          <div className="h-10 bg-gray-100 rounded w-1/2 mx-auto mb-6 animate-pulse"></div>
+          <div className="h-10  rounded w-1/2 mx-auto mb-6 animate-pulse"></div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
             {[...Array(6)].map((_, i) => (
               <div key={i} className="bg-gray-100 rounded-lg h-80 animate-pulse"></div>

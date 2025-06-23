@@ -28,9 +28,9 @@ export default function ConfirmBar() {
   };
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 bg-white">
+    <>
       <div
-        className={`mx-auto w-full max-w-[720px] px-4 sm:px-6 py-4 bg-blue-600 rounded-t-lg shadow-lg ${
+        className={`mx-auto fixed bottom-0 left-0 right-0 z-50 w-full max-w-[720px] px-4 sm:px-6 py-4 bg-blue-600 rounded-t-lg  ${
           isCartPage
             ? "flex justify-center relative"
             : "flex justify-between items-center"
@@ -84,6 +84,6 @@ export default function ConfirmBar() {
           />
         )}
       </div>
-    </div>
+    </>
   );
 }
