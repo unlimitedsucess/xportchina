@@ -21,17 +21,54 @@ export default function Header() {
   return (
     <header className="bg-white h-[57px] shadow-custom-header w-full fixed z-30">
       <div className="flex justify-between px-4 sm:px-5 items-center h-full w-full relative">
-        {!isHome && !isSearchPage && (
+        <div className="flex gap-3 items-center">
           <button
-            onClick={() => router.back()}
-            className="mr-2"
-            aria-label="Go back"
+            onClick={() => setMenuOpen(true)}
+            className="block sm:hidden"
+            aria-label="Open menu"
           >
-            <svg fill="#2547ad" width="30" height="30" viewBox="0 0 28 25">
-              <path d="M10 4.93L2.93 12 10 19.07 11.5 17.57 6.93 13H21v-2H6.93l4.57-4.57L10 4.93z" />
+            <svg
+              width="28"
+              height="28"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#2547ad"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <line x1="3" y1="12" x2="21" y2="12" />
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <line x1="3" y1="18" x2="21" y2="18" />
             </svg>
           </button>
-        )}
+          {!isHome && !isSearchPage && (
+            <button
+              onClick={() => router.back()}
+              className="mr-2"
+              aria-label="Go back"
+            >
+              <svg fill="#2547ad" width="30" height="30" viewBox="0 0 28 25">
+                <path d="M10 4.93L2.93 12 10 19.07 11.5 17.57 6.93 13H21v-2H6.93l4.57-4.57L10 4.93z" />
+              </svg>
+            </button>
+          )}
+
+          <Link href="/">
+            <div className="flex items-center">
+              <Image
+                className="h-7.5 w-7.5"
+                src="/header/logo.png"
+                alt="Logo"
+                width={128}
+                height={64}
+              />
+              <h1 className="pl-2 font-bold text-base hidden sm:block text-2f3d55">
+                Xport China || ASIC Miners
+              </h1>
+            </div>
+          </Link>
+        </div>
 
         {isSearchPage ? (
           <div className="w-full flex items-center gap-2">
@@ -60,42 +97,8 @@ export default function Header() {
           <>
             <div className="flex items-center gap-3 sm:gap-4">
               {/* Mobile hamburger */}
-              <button
-                onClick={() => setMenuOpen(true)}
-                className="block sm:hidden"
-                aria-label="Open menu"
-              >
-                <svg
-                  width="28"
-                  height="28"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#2547ad"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <line x1="3" y1="12" x2="21" y2="12" />
-                  <line x1="3" y1="6" x2="21" y2="6" />
-                  <line x1="3" y1="18" x2="21" y2="18" />
-                </svg>
-              </button>
 
               {/* Logo */}
-              <Link href="/">
-                <div className="flex items-center">
-                  <Image
-                    className="h-7.5 w-7.5"
-                    src="/header/logo.png"
-                    alt="Logo"
-                    width={128}
-                    height={64}
-                  />
-                  <h1 className="pl-2 font-bold text-base hidden sm:block text-2f3d55">
-                    Xport China || ASIC Miners
-                  </h1>
-                </div>
-              </Link>
 
               {/* Social Handles (Desktop only) */}
               <div className="hidden sm:flex gap-6 ml-6 items-center">
@@ -151,7 +154,7 @@ export default function Header() {
             {/* Mobile Slide-in Menu */}
             {menuOpen && (
               <div className="fixed inset-0 z-40 flex">
-                <div className="w-3/5 sm:w-1/3 bg-white h-full shadow-lg p-5 flex flex-col">
+                <div className="w-3/5 sm:w-1/3 bg-white h-full shadow-lg p-5 flex flex-col gap-5">
                   <button
                     className="self-end mb-4"
                     onClick={() => setMenuOpen(false)}
