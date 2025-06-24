@@ -32,7 +32,7 @@ export default function ViewCartBar() {
 
       <button
         onClick={() => router.push("/cart")}
-        className="text-white bg-black px-6 py-2 rounded-lg text-sm sm:text-base font-RobotoBold"
+        className="text-white  px-6 py-2 rounded-lg text-sm sm:text-base font-RobotoBold"
       >
         View Cart
       </button>

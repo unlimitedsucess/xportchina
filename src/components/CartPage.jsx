@@ -46,8 +46,8 @@ const CartPage = forwardRef((props, ref) => {
           quantity: cartItem.quantity,
           imageUrl: `https://xportchinacatalog.com${fullProduct?.img}` ||"",
           sku: fullProduct?.details?.sku || "",
-          warranty: fullProduct?.details?.warranty,
-          aduana: fullProduct?.moreDetails?.Aduana || "",
+          warranty: fullProduct?.details?.warranty || ".",
+          aduana: fullProduct?.moreDetails?.Aduana || ".",
           category : fullProduct?.category || "",
         };
       });
@@ -371,7 +371,7 @@ const CartPage = forwardRef((props, ref) => {
           </form>
         </div>
 
-        <div className="mt-6">
+        <div className="mt-6 w-full px-5">
           <ConfirmButtonBar cartRef={ref} />
         </div>
       </div>
