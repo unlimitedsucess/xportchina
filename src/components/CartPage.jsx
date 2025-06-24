@@ -44,7 +44,7 @@ const CartPage = forwardRef((props, ref) => {
           productName: fullProduct?.title || "N/A",
           amount: parseFloat((fullProduct?.price || cartItem.price || "0").replace(/[$,]/g, "")),
           quantity: cartItem.quantity,
-          imageUrl: `https://xportchina.vercel.app${fullProduct?.img}` ||"",
+          imageUrl: `https://xportchinacatalog.com${fullProduct?.img}` ||"",
           sku: fullProduct?.details?.sku || "",
           warranty: fullProduct?.details?.warranty,
           aduana: fullProduct?.moreDetails?.Aduana || "",
