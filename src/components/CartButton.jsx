@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addToCart, removeFromCart, updateQuantity } from "@/app/store/cartSlice";
+import { addToCart, removeFromCart, updateQuantity } from "@/store/cartSlice";
 
 export default function CartButton({ className = "", product }) {
   const dispatch = useDispatch();

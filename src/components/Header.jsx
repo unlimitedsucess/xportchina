@@ -6,7 +6,10 @@ import { usePathname, useRouter } from "next/navigation";
 import { useSelector } from "react-redux";
 import { useState } from "react";
 
+
+
 export default function Header() {
+
   const pathname = usePathname();
   const router = useRouter();
   const isHome = pathname === "/";
@@ -17,6 +20,8 @@ export default function Header() {
 
   const cart = useSelector((state) => state.cart.cart);
   const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+
+  // ✅ Google Translate Setup
 
   return (
     <header className="bg-white h-[57px] shadow-custom-header w-full fixed z-30">
@@ -95,12 +100,8 @@ export default function Header() {
           </div>
         ) : (
           <>
+          
             <div className="flex items-center gap-3 sm:gap-4">
-              {/* Mobile hamburger */}
-
-              {/* Logo */}
-
-              {/* Social Handles (Desktop only) */}
               <div className="hidden sm:flex gap-6 ml-6 items-center">
                 <a
                   href="https://t.me/Xportchina_exclusivo"
@@ -110,7 +111,10 @@ export default function Header() {
                 >
                   Telegram: @xportchina
                 </a>
-                <a href="/ https://wa.me/17023197242" className="text-sm font-RobotoMedium text-gray-800">
+                <a
+                  href="https://wa.me/17023197242"
+                  className="text-sm font-RobotoMedium text-gray-800"
+                >
                   Whatsapp: @xportchinaasic
                 </a>
                 <a
@@ -121,10 +125,12 @@ export default function Header() {
                 >
                   Gmail: @xportchina
                 </a>
+                
+                 
+              
               </div>
             </div>
 
-            {/* Right icons */}
             <div className="flex items-center gap-3">
               <button
                 onClick={() => router.push("/search")}
@@ -138,12 +144,17 @@ export default function Header() {
               </button>
 
               <Link href="/cart" className="relative">
-                <div className="w-[42px] h-[42px] bg-blue-700 rounded-full flex items-center justify-center">
-                  <svg fill="#fff" viewBox="0 0 25 25" width="22" height="22">
+                <div className="w-[42px] h-[42px] rounded-full flex items-center justify-center">
+                  <svg
+                    fill="#2547ad"
+                    viewBox="0 0 25 25"
+                    width="22"
+                    height="22"
+                  >
                     <path d="M7.66 2c-.8 0-1.53.48-1.84 1.21L3.34 9H2c-.31 0-.61.15-.8.4a1 1 0 0 0-.16.87l2.56 9.27c.24.87 1.03 1.46 1.97 1.46h12.95c.94 0 1.74-.6 1.97-1.47l2.56-9.26a1 1 0 0 0-.15-.88c-.18-.24-.48-.4-.8-.4h-1.34l-2.48-5.79A2 2 0 0 0 16.34 2H7.66zm0 2h8.68l2.14 5H5.52L7.66 4zM8 12c.55 0 1 .45 1 1v4c0 .55-.45 1-1 1s-1-.45-1-1v-4c0-.55.45-1 1-1zm4 0c.55 0 1 .45 1 1v4c0 .55-.45 1-1 1s-1-.45-1-1v-4c0-.55.45-1 1-1zm4 0c.55 0 1 .45 1 1v4c0 .55-.45 1-1 1s-1-.45-1-1v-4c0-.55.45-1 1-1z" />
                   </svg>
                   {totalItems > 0 && (
-                    <span className="absolute -top-1 -right-1 bg-red-600 text-white text-xs w-[18px] h-[18px] flex items-center justify-center rounded-full">
+                    <span className="absolute bottom-2 right-1 bg-red-600 text-white text-xs w-fit h-fit flex px-1 py-0.5 rounded items-center justify-center">
                       {totalItems}
                     </span>
                   )}
@@ -151,7 +162,6 @@ export default function Header() {
               </Link>
             </div>
 
-            {/* Mobile Slide-in Menu */}
             {menuOpen && (
               <div className="fixed inset-0 z-40 flex">
                 <div className="w-3/5 sm:w-1/3 bg-white h-full shadow-lg p-5 flex flex-col gap-5">

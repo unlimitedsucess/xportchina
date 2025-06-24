@@ -301,6 +301,21 @@
   body {
     background-color: rgb(245, 245, 255);
   }
+  #google_translate_element,
+  #google_translate_element * {
+    all: unset;
+    height: 20px !important;
+    line-height: 1px !important;
+    display: flex !important;
+    align-items: center !important;
+    font-size: 14px !important;
+  }
+  .goog-te-gadget-icon {
+    display: none !important;
+  }
+  img.goog-te-gadget-icon ~ .goog-te-gadget-icon {
+    display: none !important;
+  }
 }
 
 @media (min-width: 340px) {

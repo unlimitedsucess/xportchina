@@ -81,7 +81,7 @@ export default function CartPage() {
             <p className="text-[16px] font-RobotoRegular">Chat with us</p>
           </div>
           <a
-            href="https://wa.me/17023197242"
+            href="https://wa.me/17023197242https://wa.me/17023197242"
             className="bg-[#EFF7F0] text-[12px] font-RobotoRegular px-4 py-1.5 rounded-2xl flex items-center gap-2"
           >
             <svg

@@ -17,11 +17,11 @@ export default function Footer() {
         <h1 className="text-[#2547AD] font-RobotoBold text-sm">Contact Us</h1>
         <p className="font-RobotoMedium text-2f3d55 text-sm">Phone</p>
         <span className="font-RobotoRegular text-2f3d55 text-sm">
-          +32466906145
+          +17023197242
         </span>
         <p className="font-RobotoMedium text-2f3d55 text-sm">Email</p>
         <span className="font-RobotoRegular text-2f3d55 text-sm">
-          sales@xportchinalatam.com
+          t.me/Xportchina_exclusivo
         </span>
       </div>
       <div className="flex gap-2 w-full justify-center pb-[120px] items-center">

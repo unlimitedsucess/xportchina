@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useSelector, useDispatch } from "react-redux";
-import { removeFromCart, updateQuantity } from "@/app/store/cartSlice";
+import { removeFromCart, updateQuantity } from "@/store/cartSlice";
 
 export default function ItemsSelected() {
   const cart = useSelector((state) => state.cart.cart);
