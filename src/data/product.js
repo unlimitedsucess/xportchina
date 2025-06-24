@@ -327,7 +327,7 @@ const products = [
     price: "$7,600",
     img: "/images/products/brandNew/item15.jpg",
     details: {
-      sku: "minableCoin: Bitcoin (BTC)",
+      sku: "sku: minableCoin: Bitcoin (BTC)",
       power: "10600 W",
       dimensions: "48.6 cm x 13.2 cm x 90 cm. (W*H*L)",
       weight: "18 KG",

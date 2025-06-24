@@ -1,5 +1,5 @@
 
-import ConfirmBar from "@/components/ConfIrmBar";
+import ViewCartBar from "@/components/ViewCartBar";
 import Header from "@/components/Header";
 import Providers from "@/components/Providers";
 import Footer from "@/components/Footer";
@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
           <Header />
            <GoogleOutput />
           <div className="mb-20">{children}</div>
-          <ConfirmBar />
+          <ViewCartBar />
           <Footer />
         </Providers>
       </body>
