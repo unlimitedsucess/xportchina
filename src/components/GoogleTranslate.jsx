@@ -3,18 +3,16 @@ import { useEffect } from "react";
 
 export default function GoogleTranslate() {
   useEffect(() => {
-    // Avoid multiple initialization
     if (document.getElementById("google-translate-script")) return;
 
     window.googleTranslateElementInit = () => {
       const container = document.getElementById("google_translate_element");
-      if (container) container.innerHTML = ""; // Clear before reinitializing
+      if (container) container.innerHTML = "";
 
       if (window.google?.translate?.TranslateElement) {
         new window.google.translate.TranslateElement(
           {
-            pageLanguage: "en",
-            includedLanguages: "en,es,fr,de,zh,pt,ar,ru",
+            pageLanguage: "en", // Your site's base language
             layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE,
           },
           "google_translate_element"

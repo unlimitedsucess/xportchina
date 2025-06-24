@@ -47,9 +47,9 @@ export default function ItemRouts() {
     },
     {
       title: "Repuestos para Bitmain Antminer ||Spare part",
-      image: "/images/secondhand/secondhandP.jpg",
-      alt: "Second Hand Product",
-      slug: "second-hand",
+      image: "/images/sparePart/spare.jpg",
+      alt: "spare part",
+      slug: "spare-part",
       label: "Partes & Repuestos para Bitmain Antminer )",
       count: "6 items",
     },

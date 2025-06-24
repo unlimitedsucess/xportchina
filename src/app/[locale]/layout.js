@@ -5,6 +5,7 @@ import Providers from "@/components/Providers";
 import Footer from "@/components/Footer";
 import "../globals.css";
 import GoogleOutput from "@/components/googleOutput";
+import { Toaster } from "sonner";
 
 export const metadata = {
   title: "Xport China || ASIC Miners",
@@ -18,6 +19,7 @@ export default function RootLayout({ children }) {
   <body className="min-h-screen h-dvh overflow-auto">
         <Providers>
           <Header />
+            <Toaster position="top-center" richColors closeButton /> {/* ✅ Add this */}
            <GoogleOutput />
           <div className="mb-20">{children}</div>
           <ViewCartBar />

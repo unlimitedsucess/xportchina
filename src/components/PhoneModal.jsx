@@ -45,14 +45,21 @@ const countries = [
 
 
 export default function PhoneModal({ setShowPhoneModal, setPhone }) {
-  const [selectedCountry, setSelectedCountry] = useState(countries[0]);
-  const [localPhone, setLocalPhone]       = useState("");
+   const [selectedCountry, setSelectedCountry] = useState(countries[0]);
+  const [localPhone, setLocalPhone] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleSave = () => {
     if (!localPhone.trim()) return;
-    setPhone(`${selectedCountry.dial_code}${localPhone}`);
-    setLocalPhone("");
-    setShowPhoneModal(false);
+
+    setIsLoading(true);
+
+    setTimeout(() => {
+      setPhone(`${selectedCountry.dial_code}${localPhone}`);
+      setLocalPhone("");
+      setShowPhoneModal(false);
+      setIsLoading(false);
+    }, 3000); // 3 seconds
   };
 
   return (
@@ -102,11 +109,16 @@ export default function PhoneModal({ setShowPhoneModal, setPhone }) {
           >
             Cancel
           </button>
-          <button
+         <button
             onClick={handleSave}
-            className="px-4 py-2 rounded bg-blue-600 text-white"
+            disabled={isLoading}
+            className="px-4 py-2 rounded bg-blue-600 text-white flex items-center gap-2"
           >
-            Save
+            {isLoading ? (
+              <span className="animate-spin w-4 h-4 border-2 border-white border-t-transparent rounded-full" />
+            ) : (
+              "Save"
+            )}
           </button>
         </div>
       </div>
