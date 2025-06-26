@@ -6,9 +6,8 @@ import { usePathname, useRouter } from "next/navigation";
 import { useSelector } from "react-redux";
 import { useState } from "react";
 
-
-
 export default function Header() {
+  const [searchActive, setSearchActive] = useState(false);
 
   const pathname = usePathname();
   const router = useRouter();
@@ -100,7 +99,6 @@ export default function Header() {
           </div>
         ) : (
           <>
-          
             <div className="flex items-center gap-3 sm:gap-4">
               <div className="hidden sm:flex gap-6 ml-6 items-center">
                 <a
@@ -125,17 +123,11 @@ export default function Header() {
                 >
                   Gmail: @xportchina
                 </a>
-                
-                 
-              
               </div>
             </div>
 
             <div className="flex items-center gap-3">
-              <button
-                onClick={() => router.push("/search")}
-                aria-label="Search"
-              >
+              <button onClick={() => setSearchActive(true)} aria-label="Search">
                 <svg width="20" height="20" viewBox="0 0 44 44">
                   <g fill="#2547ad" fillRule="nonzero">
                     <path d="M17 0C7.6 0 0 7.6 0 17s7.6 17 17 17c3.4 0 6.5-1 9.1-2.7L38.4 43.6l4.2-4.2L30.5 27.3C32.7 24.4 34 20.9 34 17 34 7.6 26.4 0 17 0zm0 4c7.2 0 13 5.8 13 13s-5.8 13-13 13S4 24.2 4 17 9.8 4 17 4z" />
@@ -211,6 +203,29 @@ export default function Header() {
               </div>
             )}
           </>
+        )}
+        {searchActive && (
+          <div className="absolute inset-0 bg-white text-black z-50 flex items-center px-4 gap-2">
+            <button
+              onClick={() => setSearchActive(false)}
+              aria-label="Close search"
+            >
+              <svg fill="#2547ad" width="30" height="30" viewBox="0 0 28 25">
+                <path d="M10 4.93L2.93 12 10 19.07 11.5 17.57 6.93 13H21v-2H6.93l4.57-4.57L10 4.93z" />
+              </svg>
+            </button>
+            <input
+              type="text"
+              value={searchInput}
+              onChange={(e) => {
+                const value = e.target.value;
+                setSearchInput(value);
+                router.replace(`/search?q=${encodeURIComponent(value)}`);
+              }}
+              placeholder="Search products..."
+              className="flex-1 h-10 px-4 border border-gray-300 rounded-md focus:outline-none"
+            />
+          </div>
         )}
       </div>
     </header>
