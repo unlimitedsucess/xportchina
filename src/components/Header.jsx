@@ -135,23 +135,23 @@ export default function Header() {
                 </svg>
               </button>
 
-              <Link href="/cart" className="relative">
-                <div className="w-[42px] h-[42px] rounded-full flex items-center justify-center">
-                  <svg
-                    fill="#2547ad"
-                    viewBox="0 0 25 25"
-                    width="22"
-                    height="22"
-                  >
-                    <path d="M7.66 2c-.8 0-1.53.48-1.84 1.21L3.34 9H2c-.31 0-.61.15-.8.4a1 1 0 0 0-.16.87l2.56 9.27c.24.87 1.03 1.46 1.97 1.46h12.95c.94 0 1.74-.6 1.97-1.47l2.56-9.26a1 1 0 0 0-.15-.88c-.18-.24-.48-.4-.8-.4h-1.34l-2.48-5.79A2 2 0 0 0 16.34 2H7.66zm0 2h8.68l2.14 5H5.52L7.66 4zM8 12c.55 0 1 .45 1 1v4c0 .55-.45 1-1 1s-1-.45-1-1v-4c0-.55.45-1 1-1zm4 0c.55 0 1 .45 1 1v4c0 .55-.45 1-1 1s-1-.45-1-1v-4c0-.55.45-1 1-1zm4 0c.55 0 1 .45 1 1v4c0 .55-.45 1-1 1s-1-.45-1-1v-4c0-.55.45-1 1-1z" />
-                  </svg>
-                  {totalItems > 0 && (
+              {totalItems > 0 && (
+                <Link href="/cart" className="relative">
+                  <div className="w-[42px] h-[42px] rounded-full flex items-center justify-center">
+                    <svg
+                      fill="#2547ad"
+                      viewBox="0 0 25 25"
+                      width="22"
+                      height="22"
+                    >
+                      <path d="M7.66 2c-.8 0-1.53.48-1.84 1.21L3.34 9H2c-.31 0-.61.15-.8.4a1 1 0 0 0-.16.87l2.56 9.27c.24.87 1.03 1.46 1.97 1.46h12.95c.94 0 1.74-.6 1.97-1.47l2.56-9.26a1 1 0 0 0-.15-.88c-.18-.24-.48-.4-.8-.4h-1.34l-2.48-5.79A2 2 0 0 0 16.34 2H7.66zm0 2h8.68l2.14 5H5.52L7.66 4zM8 12c.55 0 1 .45 1 1v4c0 .55-.45 1-1 1s-1-.45-1-1v-4c0-.55.45-1 1-1zm4 0c.55 0 1 .45 1 1v4c0 .55-.45 1-1 1s-1-.45-1-1v-4c0-.55.45-1 1-1zm4 0c.55 0 1 .45 1 1v4c0 .55-.45 1-1 1s-1-.45-1-1v-4c0-.55.45-1 1-1z" />
+                    </svg>
                     <span className="absolute bottom-2 right-1 bg-red-600 text-white text-xs w-fit h-fit flex px-1 py-0.5 rounded items-center justify-center">
                       {totalItems}
                     </span>
-                  )}
-                </div>
-              </Link>
+                  </div>
+                </Link>
+              )}
             </div>
 
             {menuOpen && (
