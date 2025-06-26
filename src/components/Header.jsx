@@ -11,7 +11,7 @@ export default function Header() {
 
   const pathname = usePathname();
   const router = useRouter();
-  const isHome = pathname === "/";
+  const isHome = /^\/[a-z]{2}$/.test(pathname);
   const isSearchPage = pathname === "/search";
 
   const [searchInput, setSearchInput] = useState("");
