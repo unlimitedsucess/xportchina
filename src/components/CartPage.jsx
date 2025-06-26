@@ -49,6 +49,9 @@ const CartPage = forwardRef((props, ref) => {
           warranty: fullProduct?.details?.warranty || ".",
           aduana: fullProduct?.moreDetails?.Aduana || ".",
           category : fullProduct?.category || "",
+
+         
+          
         };
       });
 

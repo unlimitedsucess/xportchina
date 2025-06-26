@@ -10,6 +10,9 @@ import { Toaster } from "sonner";
 export const metadata = {
   title: "Xport China || ASIC Miners",
   description: "Official ASIC catalog viewer",
+  icons: {
+    icon: "/favicon.png",
+  },
 };
 
 export default function RootLayout({ children }) {
