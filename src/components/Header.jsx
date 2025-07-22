@@ -107,13 +107,13 @@ export default function Header() {
                   rel="noreferrer"
                   className="text-sm font-RobotoMedium text-gray-800"
                 >
-                  Telegram: @xportchina
+                  Telegram: @Xportchina_exclusivo
                 </a>
                 <a
-                  href="https://wa.me/17023197242"
+                  href="https://t.me/xportchina_asicminer"
                   className="text-sm font-RobotoMedium text-gray-800"
                 >
-                  Whatsapp: @xportchinaasic
+                  Telegram Channel: @xportchina_asicminer
                 </a>
                 <a
                   href="mailto:xportchinaexclusive@gmail.com"
@@ -121,7 +121,7 @@ export default function Header() {
                   rel="noreferrer"
                   className="text-sm font-RobotoMedium text-gray-800"
                 >
-                  Gmail: @xportchina
+                  Telegran: @xportchina
                 </a>
               </div>
             </div>

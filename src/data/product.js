@@ -456,7 +456,7 @@ const products = [
     category: "piscinas-inmersion",
   },
   {
-    slug: "Nivel-residencial6.",
+    slug: "Nivel-residencial4",
     title: "Piscina para refrigeración por inmersión para 6 unidades. Nivel residencial.",
     price: "$4200",
     img: "/images/undefi/img4.jpg",
@@ -479,7 +479,7 @@ const products = [
     category: "piscinas-inmersion",
   },
   {
-    slug: "Nivel-residencial8.",
+    slug: "Nivel-residencial5",
     title: "Piscina para refrigeración por inmersión para 8 unidades. Nivel residencial.",
     price: "$5,000",
     img: "/images/undefi/img5.jpg",
@@ -502,7 +502,7 @@ const products = [
     category: "piscinas-inmersion",
   },
   {
-    slug: "Technology.",
+    slug: "Technology",
     title: "Piscina para refrigeración por inmersión modular, Box Technology.",
     price: "$9,000",
     img: "/images/undefi/multi/img1.jpg",
