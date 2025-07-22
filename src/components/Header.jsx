@@ -110,18 +110,18 @@ export default function Header() {
                   Telegram: @Xportchina_exclusivo
                 </a>
                 <a
-                  href="https://t.me/xportchina_asicminer"
+                  href="https://wa.me/17023197242"
                   className="text-sm font-RobotoMedium text-gray-800"
                 >
-                  Telegram Channel: @xportchina_asicminer
+                  Whatsapp: @xportchinaasic
                 </a>
                 <a
-                  href="mailto:xportchinaexclusive@gmail.com"
+                  href="https://t.me/xportchina_asicminer"
                   target="_blank"
                   rel="noreferrer"
                   className="text-sm font-RobotoMedium text-gray-800"
                 >
-                  Telegran: @xportchina
+                  telegram channel: @xportchina_asicminer
                 </a>
               </div>
             </div>
@@ -177,23 +177,23 @@ export default function Header() {
                     href="https://t.me/Xportchina_exclusivo"
                     target="_blank"
                     rel="noreferrer"
-                    className="mb-3 text-sm font-RobotoMediu text-gray-800"
+                    className="text-sm font-RobotoMedium text-gray-800"
                   >
-                    Telegram: @xportchina
+                    Telegram: @Xportchina_exclusivo
                   </a>
                   <a
                     href="https://wa.me/17023197242"
-                    className="mb-3 text-sm font-RobotoMedium text-gray-800"
+                    className="text-sm font-RobotoMedium text-gray-800"
                   >
                     Whatsapp: @xportchinaasic
                   </a>
                   <a
-                    href="mailto:xportchinaexclusive@gmail.com"
+                    href="https://t.me/xportchina_asicminer"
                     target="_blank"
                     rel="noreferrer"
-                    className="mb-3 text-sm font-RobotoMedium text-gray-800"
+                    className="text-sm font-RobotoMedium text-gray-800"
                   >
-                    Gmail: @xportchina
+                    telegram channel: @xportchina_asicminer
                   </a>
                 </div>
                 <div
