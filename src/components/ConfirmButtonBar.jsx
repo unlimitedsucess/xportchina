@@ -57,7 +57,7 @@ export default function ConfirmButtonBar({ cartRef }) {
   return (
     <>
       {/* Floating confirm button */}
-      <div className="mx-auto fixed bottom-0 mb-[10px] left-0 right-0 z-50 w-full max-w-[340px] md:max-w-[620px] px-4 sm:px-6 py-4 bg-blue-600 rounded-lg flex justify-center">
+      <div className="mx-auto fixed bottom-0 mb-[10px] left-0 right-0 z-50 w-full max-w-[320px] md:max-w-[620px] px-4 sm:px-6 py-4 bg-blue-600 rounded-lg flex justify-center">
         <button
           onClick={() => setShowModal(true)}
           disabled={isSubmitting}
