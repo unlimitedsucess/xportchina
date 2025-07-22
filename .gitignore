@@ -35,7 +35,10 @@ yarn-error.log*
 
 # vercel
 .vercel
+/node_modules/
+
 
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+/public/node_modules/git rm -r --cached public/node_modules
