@@ -44,6 +44,10 @@ export default function ConfirmButtonBar({ cartRef }) {
       } else {
         toast.success("Order submitted successfully!");
       }
+
+      if (result.description) {
+        toast.error(result.description);
+      }
     } catch (err) {
       toast.error("Network error. Try again later.");
     } finally {

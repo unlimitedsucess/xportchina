@@ -2,7 +2,6 @@
 
 const products = [
   {
-    
     slug: "bitmain-antminer-ks5",
     title: "Bitmain Antminer KS5 pro 21 THS.",
     price: "$2,100",
@@ -344,6 +343,29 @@ const products = [
     },
     category: "brand-new",
   },
+  {
+    slug: "avalonQ",
+    title: "Avalon Q 90 THS. ",
+    price: "$700",
+    img: "/images/products/brandNew/item16.jpg",
+    details: {
+      sku: "sku: minableCoin: Bitcoin (BTC)",
+      power: "1674W",
+      dimensions: "17.91x5.14x17.32",
+      weight: "110V-240V",
+      warranty: "4 años",
+      Radiador: 1,
+    },
+
+    moreDetails: {
+      fuente: "Fuente de poder: Incluida.",
+      cable: "Radiador: Incluido.",
+      flete: "Flete marítimo: Incluido.",
+      Flete: "Flete aéreo: Depende del país destino.",
+      Aduana: "Aduana: Depende del país destino.",
+    },
+    category: "brand-new",
+  },
 
   {
     slug: "Bitmain-Antminer-S19-pro-110",
@@ -401,7 +423,8 @@ const products = [
     },
 
     moreDetails: {
-      fuente: "Capacidad: 1 unidad Bitmain Antminer Peso sin aceite ni máquinas: 20 KG. Aceite dieléctrico necesario: 20 litros. Peso del Dry Cooler: 18 KG Medidas externas: 41 cm * 40 cm * 47.5 cm (largo* ancho* alto) en centímetros. Voltaje de entrada: 220 V Consumo: 240W Display: 1,32 Oled  Tipo de enfriamiento: Dry Cooler.Nivel: Residencial.Ruido: Si el Dry Cooler se instala fuera de la casa u oficina, como si se tratase de un aire acondicionado, tendrá totalmente cero (0%) ruido.",
+      fuente:
+        "Capacidad: 1 unidad Bitmain Antminer Peso sin aceite ni máquinas: 20 KG. Aceite dieléctrico necesario: 20 litros. Peso del Dry Cooler: 18 KG Medidas externas: 41 cm * 40 cm * 47.5 cm (largo* ancho* alto) en centímetros. Voltaje de entrada: 220 V Consumo: 240W Display: 1,32 Oled  Tipo de enfriamiento: Dry Cooler.Nivel: Residencial.Ruido: Si el Dry Cooler se instala fuera de la casa u oficina, como si se tratase de un aire acondicionado, tendrá totalmente cero (0%) ruido.",
       cable: "",
       flete: "",
       Flete: "",
@@ -411,7 +434,8 @@ const products = [
   },
   {
     slug: "Nivel-residencial2",
-    title: "Piscina para refrigeración por inmersión, para 2 unidades. Nivel residencial.",
+    title:
+      "Piscina para refrigeración por inmersión, para 2 unidades. Nivel residencial.",
     price: "$2,000",
     img: "/images/undefi/img2.jpg",
     details: {
@@ -424,7 +448,8 @@ const products = [
     },
 
     moreDetails: {
-      fuente: "Capacidad: 2 unidades Bitmain Antminer Peso sin aceite ni máquinas: 60 KG.Aceite dieléctrico necesario: 40  litros. Peso del Dry Cooler: 48 KG Medidas externas: 54.2 cm * 46 cm * 54.2 cm  (largo*ancho*alto) en centímetros. Voltaje de entrada: 220 V Consumo: 460 W Display: 2 Oled  Tipo de enfriamiento: Dry Cooler. Nivel: Residencial. Ruido: Si el Dry Cooler se instala fuera de la casa u oficina, como si se tratase de un aire acondicionado, tendrá totalmente cero (0%) ruido.",
+      fuente:
+        "Capacidad: 2 unidades Bitmain Antminer Peso sin aceite ni máquinas: 60 KG.Aceite dieléctrico necesario: 40  litros. Peso del Dry Cooler: 48 KG Medidas externas: 54.2 cm * 46 cm * 54.2 cm  (largo*ancho*alto) en centímetros. Voltaje de entrada: 220 V Consumo: 460 W Display: 2 Oled  Tipo de enfriamiento: Dry Cooler. Nivel: Residencial. Ruido: Si el Dry Cooler se instala fuera de la casa u oficina, como si se tratase de un aire acondicionado, tendrá totalmente cero (0%) ruido.",
       cable: ".",
       flete: "",
       Flete: "",
@@ -447,7 +472,8 @@ const products = [
     },
 
     moreDetails: {
-      fuente: "Capacidad: 4 unidades Bitmain Antminer Peso sin aceite ni máquinas: 78 KG. Aceite dieléctrico necesario: 80  litros. Peso del Dry Cooler: 55 KG Medidas externas: 100 cm * 76 cm * 60 cm (largo x* ancho * alto) en centímetros. Voltaje de entrada: 220 V Consumo: 420 W Display: 2 Oled ipo de enfriamiento: Dry Cooler. Nivel: Residencial.Ruido: Si el Dry Cooler se instala fuera de la casa u oficina, como si se tratase de un aire acondicionado, tendrá totalmente cero (0%) ruido.",
+      fuente:
+        "Capacidad: 4 unidades Bitmain Antminer Peso sin aceite ni máquinas: 78 KG. Aceite dieléctrico necesario: 80  litros. Peso del Dry Cooler: 55 KG Medidas externas: 100 cm * 76 cm * 60 cm (largo x* ancho * alto) en centímetros. Voltaje de entrada: 220 V Consumo: 420 W Display: 2 Oled ipo de enfriamiento: Dry Cooler. Nivel: Residencial.Ruido: Si el Dry Cooler se instala fuera de la casa u oficina, como si se tratase de un aire acondicionado, tendrá totalmente cero (0%) ruido.",
       cable: ".",
       flete: "",
       Flete: "",
@@ -457,7 +483,8 @@ const products = [
   },
   {
     slug: "Nivel-residencial4",
-    title: "Piscina para refrigeración por inmersión para 6 unidades. Nivel residencial.",
+    title:
+      "Piscina para refrigeración por inmersión para 6 unidades. Nivel residencial.",
     price: "$4200",
     img: "/images/undefi/img4.jpg",
     details: {
@@ -470,7 +497,8 @@ const products = [
     },
 
     moreDetails: {
-      fuente: "Capacidad: 6 unidades Bitmain Antminer Peso sin aceite ni máquinas: 90 KG. Aceite dieléctrico necesario: 100  litros. Peso del Dry Cooler: 55 KG Medidas externas: 110 cm * 88 cm * 60 cm (largo*ancho* alto) en centímetros. Voltaje de entrada: 220 V Consumo: 340 W Display: 2 Oled Tipo de enfriamiento: Dry Cooler. Nivel: Residencial. Ruido: Si el Dry Cooler se instala fuera de la casa u oficina, como si se tratase de un aire acondicionado, tendrá totalmente cero (0%) ruido.",
+      fuente:
+        "Capacidad: 6 unidades Bitmain Antminer Peso sin aceite ni máquinas: 90 KG. Aceite dieléctrico necesario: 100  litros. Peso del Dry Cooler: 55 KG Medidas externas: 110 cm * 88 cm * 60 cm (largo*ancho* alto) en centímetros. Voltaje de entrada: 220 V Consumo: 340 W Display: 2 Oled Tipo de enfriamiento: Dry Cooler. Nivel: Residencial. Ruido: Si el Dry Cooler se instala fuera de la casa u oficina, como si se tratase de un aire acondicionado, tendrá totalmente cero (0%) ruido.",
       cable: ".",
       flete: "",
       Flete: "",
@@ -480,7 +508,8 @@ const products = [
   },
   {
     slug: "Nivel-residencial5",
-    title: "Piscina para refrigeración por inmersión para 8 unidades. Nivel residencial.",
+    title:
+      "Piscina para refrigeración por inmersión para 8 unidades. Nivel residencial.",
     price: "$5,000",
     img: "/images/undefi/img5.jpg",
     details: {
@@ -493,7 +522,8 @@ const products = [
     },
 
     moreDetails: {
-      fuente: "Capacidad: 8 unidades Bitmain Antminer Peso sin aceite ni máquinas: 125 KG. Aceite dieléctrico necesario: 140  litros. Peso del Dry Cooler: 55 KG Medidas externas: 140 cm * 88 cm * 60 cm (largo*ancho*alto) en centímetros. Voltaje de entrada: 220V Consumo: 720 WDisplay: 2 Oled Tipo de enfriamiento: Dry Cooler. Nivel: Residencial. Ruido: Si el Dry Cooler se instala fuera de la casa u oficina, como si se tratase de un aire acondicionado, tendrá totalmente cero (0%) ruido.",
+      fuente:
+        "Capacidad: 8 unidades Bitmain Antminer Peso sin aceite ni máquinas: 125 KG. Aceite dieléctrico necesario: 140  litros. Peso del Dry Cooler: 55 KG Medidas externas: 140 cm * 88 cm * 60 cm (largo*ancho*alto) en centímetros. Voltaje de entrada: 220V Consumo: 720 WDisplay: 2 Oled Tipo de enfriamiento: Dry Cooler. Nivel: Residencial. Ruido: Si el Dry Cooler se instala fuera de la casa u oficina, como si se tratase de un aire acondicionado, tendrá totalmente cero (0%) ruido.",
       cable: ".",
       flete: "",
       Flete: "",
@@ -516,7 +546,8 @@ const products = [
     },
 
     moreDetails: {
-      fuente: "Capacidad: 24 unidades Bitmain Antminer. Peso sin aceite ni máquinas: 610 KG. Medidas externas: 1.35 m * 1.07 m * 2.14 m (largo  * ancho * alto) en metros. Voltaje de entrada: 380 ~ 440 v a 50/60 HZ. Tipo de enfriamiento: Dry Cooler. Recomendación: industrial. Residencial solo si tiene un buen espacio como en patios o cocheras, tome en cuenta ruido.",
+      fuente:
+        "Capacidad: 24 unidades Bitmain Antminer. Peso sin aceite ni máquinas: 610 KG. Medidas externas: 1.35 m * 1.07 m * 2.14 m (largo  * ancho * alto) en metros. Voltaje de entrada: 380 ~ 440 v a 50/60 HZ. Tipo de enfriamiento: Dry Cooler. Recomendación: industrial. Residencial solo si tiene un buen espacio como en patios o cocheras, tome en cuenta ruido.",
       cable: ".",
       flete: "",
       Flete: "",
@@ -570,7 +601,7 @@ const products = [
     },
     category: "hydro-cabinas",
   },
-  
+
   {
     slug: "Hydro-Cabina3",
     title: "Hydro Cabina x6 S21 HYDRO 335 THS",
@@ -701,7 +732,8 @@ const products = [
     },
 
     moreDetails: {
-      fuente: "Fan cooler para Antminer S9 (cualquier variante S9) T9, T15, T17, S11, S15, D3, y cualquier similar",
+      fuente:
+        "Fan cooler para Antminer S9 (cualquier variante S9) T9, T15, T17, S11, S15, D3, y cualquier similar",
       cable: "",
       flete: "",
       Flete: ".",
@@ -774,7 +806,8 @@ const products = [
       cable: "",
       flete: "",
       Flete: "Garantía: 1 años ",
-      Aduana: "Asistencia remota para instalación a través de nuestro sporte post venta.",
+      Aduana:
+        "Asistencia remota para instalación a través de nuestro sporte post venta.",
     },
     category: "spare-part",
   },
@@ -797,7 +830,8 @@ const products = [
       cable: "",
       flete: ".",
       Flete: "1 años de garantía",
-      Aduana: " Asistencia remota para instalación a través de nuestro soporte post venta.",
+      Aduana:
+        " Asistencia remota para instalación a través de nuestro soporte post venta.",
     },
     category: "spare-part",
   },
@@ -824,7 +858,6 @@ const products = [
     },
     category: "spare-part",
   },
-  
 ];
 
 export default products;
