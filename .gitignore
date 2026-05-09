@@ -41,4 +41,5 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
-/public/node_modules/git rm -r --cached public/node_modules
+/public/node_modules/
+/server/node_modules/
