@@ -193,6 +193,10 @@ export async function POST(req) {
         user: smtpFromEmail,
         pass: smtpFromPassword,
       },
+      family: 4, // Force IPv4 to avoid ENOTFOUND issues with IPv6
+      connectionTimeout: 15000,
+      greetingTimeout: 15000,
+      socketTimeout: 15000,
     });
 
     const options = {

@@ -22,7 +22,7 @@ export default function ConfirmButtonBar({ cartRef }) {
     try {
       setIsSubmitting(true);
       const response = await fetch(
-        "https://send-email-myu2.onrender.com/api/v1/email",
+        "/api/v1/email",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -36,17 +36,11 @@ export default function ConfirmButtonBar({ cartRef }) {
       if (!response.ok) {
         if (result.errors) {
           result.errors.forEach((error) => toast.error(error));
-        } else if (result.message) {
-          toast.error(result.message);
         } else {
-          toast.error("An error occurred. Please try again.");
+          toast.error(result.description || result.message || "An error occurred. Please try again.");
         }
       } else {
-        toast.success("Order submitted successfully!");
-      }
-
-      if (result.description) {
-        toast.error(result.description);
+        toast.success(result.description || "Order submitted successfully!");
       }
     } catch (err) {
       toast.error("Network error. Try again later.");
