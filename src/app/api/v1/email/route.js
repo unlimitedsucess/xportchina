@@ -1,5 +1,6 @@
-const nodemailer = require("nodemailer");
-const Joi = require("joi");
+import { NextResponse } from 'next/server';
+import nodemailer from 'nodemailer';
+import Joi from 'joi';
 
 const adminEmail = ["xportchinaexclusive@gmail.com"];
 const smtpFromEmail = process.env.SMTP_EMAIL || "xportchinaexclusive@gmail.com";
@@ -28,129 +29,131 @@ function formatTodayDate() {
   return `${day}${getOrdinal(day)} ${month}, ${year}`;
 }
 
-exports.postEmail = async (req, res, next) => {
-  const schema = Joi.object({
-    name: Joi.string().trim().min(3).max(50).required().messages({
-      "string.empty": "Name is required",
-      "string.min": "Name must be at least 3 characters",
-      "string.max": "Name must not exceed 50 characters",
-    }),
-
-    mobileNumber: Joi.string()
-      .trim()
-      .pattern(/^\+?[0-9\s\-().]{7,20}$/)
-      .required()
-      .messages({
-        "string.empty": "Mobile number is required",
-        "string.pattern.base": "Mobile number format is invalid",
-      }),
-
-    email: Joi.string().trim().email().required().messages({
-      "string.email": "Enter a valid email address",
-      "string.empty": "Email is required",
-    }),
-
-    additionalNote: Joi.string().trim().required().messages({
-      "string.empty": "Additional note is required",
-    }),
-
-    country: Joi.string().trim().required().messages({
-      "string.empty": "Country is required",
-    }),
-
-    zipCode: Joi.string().trim().required().messages({
-      "string.empty": "Zip code is required",
-    }),
-
-    house: Joi.string().trim().required().messages({
-      "string.empty": "House number/name is required",
-    }),
-
-    street: Joi.string().trim().required().messages({
-      "string.empty": "Street is required",
-    }),
-
-    landmark: Joi.string().trim().required().messages({
-      "string.empty": "Landmark is required",
-    }),
-
-    state: Joi.string().trim().required().messages({
-      "string.empty": "State is required",
-    }),
-
-    city: Joi.string().trim().required().messages({
-      "string.empty": "City is required",
-    }),
-    total: Joi.number().positive().precision(2).required().messages({
-      "number.base": "Total must be a number",
-      "number.positive": "Total must be a positive number",
-      "number.precision": "Total can have up to 2 decimal places",
-      "any.required": "Total is required",
-    }),
-    products: Joi.array()
-      .items(
-        Joi.object({
-          productName: Joi.string().trim().required().messages({
-            "string.empty": "Product name is required",
-          }),
-
-          category: Joi.string().trim().required().messages({
-            "string.empty": "Category is required",
-          }),
-
-          imageUrl: Joi.string().uri().required().messages({
-            "string.empty": "Image URL is required",
-            "string.uri": "Image URL must be a valid URI",
-          }),
-
-          amount: Joi.number().positive().messages({
-            "number.base": "Amount must be a number",
-            "number.positive": "Amount must be positive",
-          }),
-
-          sku: Joi.string().trim().messages({
-            "string.empty": "SKU cannot be empty",
-          }),
-
-          warranty: Joi.string().trim().messages({
-            "string.empty": "Warranty cannot be empty",
-          }),
-
-          fuentea: Joi.string().trim().messages({
-            "string.empty": "Fuente cannot be empty",
-          }),
-
-          aduana: Joi.string().trim().messages({
-            "string.empty": "Aduana cannot be empty",
-          }),
-
-          quantity: Joi.number().integer().positive().messages({
-            "number.base": "Quantity must be a number",
-            "number.integer": "Quantity must be an integer",
-            "number.positive": "Quantity must be at least 1",
-          }),
-        })
-      )
-      .min(1)
-      .required()
-      .messages({
-        "array.base": "Products must be an array",
-        "array.min": "At least one product is required",
-        "any.required": "Products are required",
-      }),
-  });
-
-  // Validate the request body against the schema
-  const { error, value } = schema.validate(req.body);
-
-  if (error) {
-    return res.status(400).json({
-      message: "Validation Error",
-      description: error.details[0].message,
-    });
-  }
-
+export async function POST(req) {
   try {
+    const body = await req.json();
+
+    const schema = Joi.object({
+      name: Joi.string().trim().min(3).max(50).required().messages({
+        "string.empty": "Name is required",
+        "string.min": "Name must be at least 3 characters",
+        "string.max": "Name must not exceed 50 characters",
+      }),
+
+      mobileNumber: Joi.string()
+        .trim()
+        .pattern(/^\+?[0-9\s\-().]{7,20}$/)
+        .required()
+        .messages({
+          "string.empty": "Mobile number is required",
+          "string.pattern.base": "Mobile number format is invalid",
+        }),
+
+      email: Joi.string().trim().email().required().messages({
+        "string.email": "Enter a valid email address",
+        "string.empty": "Email is required",
+      }),
+
+      additionalNote: Joi.string().trim().required().messages({
+        "string.empty": "Additional note is required",
+      }),
+
+      country: Joi.string().trim().required().messages({
+        "string.empty": "Country is required",
+      }),
+
+      zipCode: Joi.string().trim().required().messages({
+        "string.empty": "Zip code is required",
+      }),
+
+      house: Joi.string().trim().required().messages({
+        "string.empty": "House number/name is required",
+      }),
+
+      street: Joi.string().trim().required().messages({
+        "string.empty": "Street is required",
+      }),
+
+      landmark: Joi.string().trim().required().messages({
+        "string.empty": "Landmark is required",
+      }),
+
+      state: Joi.string().trim().required().messages({
+        "string.empty": "State is required",
+      }),
+
+      city: Joi.string().trim().required().messages({
+        "string.empty": "City is required",
+      }),
+      total: Joi.number().positive().precision(2).required().messages({
+        "number.base": "Total must be a number",
+        "number.positive": "Total must be a positive number",
+        "number.precision": "Total can have up to 2 decimal places",
+        "any.required": "Total is required",
+      }),
+      products: Joi.array()
+        .items(
+          Joi.object({
+            productName: Joi.string().trim().required().messages({
+              "string.empty": "Product name is required",
+            }),
+
+            category: Joi.string().trim().required().messages({
+              "string.empty": "Category is required",
+            }),
+
+            imageUrl: Joi.string().uri().required().messages({
+              "string.empty": "Image URL is required",
+              "string.uri": "Image URL must be a valid URI",
+            }),
+
+            amount: Joi.number().positive().messages({
+              "number.base": "Amount must be a number",
+              "number.positive": "Amount must be positive",
+            }),
+
+            sku: Joi.string().trim().messages({
+              "string.empty": "SKU cannot be empty",
+            }),
+
+            warranty: Joi.string().trim().messages({
+              "string.empty": "Warranty cannot be empty",
+            }),
+
+            fuentea: Joi.string().trim().messages({
+              "string.empty": "Fuente cannot be empty",
+            }),
+
+            aduana: Joi.string().trim().messages({
+              "string.empty": "Aduana cannot be empty",
+            }),
+
+            quantity: Joi.number().integer().positive().messages({
+              "number.base": "Quantity must be a number",
+              "number.integer": "Quantity must be an integer",
+              "number.positive": "Quantity must be at least 1",
+            }),
+          })
+        )
+        .min(1)
+        .required()
+        .messages({
+          "array.base": "Products must be an array",
+          "array.min": "At least one product is required",
+          "any.required": "Products are required",
+        }),
+    });
+
+    // Validate the request body against the schema
+    const { error, value } = schema.validate(body);
+
+    if (error) {
+      return NextResponse.json({
+        message: "Validation Error",
+        description: error.details[0].message,
+      }, { status: 400 });
+    }
+
     const {
       name,
       mobileNumber,
@@ -191,12 +194,6 @@ exports.postEmail = async (req, res, next) => {
         pass: smtpFromPassword,
       },
     });
-
-    const sendMail = async (mailDetails) => {
-      const info = await transporter.sendMail(mailDetails);
-      console.log("[EMAIL] Sent, messageId:", info.messageId);
-      return info;
-    };
 
     const options = {
       from: `"Xport China" <${smtpFromEmail}>`,
@@ -325,21 +322,33 @@ exports.postEmail = async (req, res, next) => {
     };
 
     console.log("[EMAIL] Attempting to send email to:", email);
-    await sendMail(options);
+    const info = await transporter.sendMail(options);
+    console.log("[EMAIL] Sent, messageId:", info.messageId);
     console.log("[EMAIL] Email sent successfully to:", email);
-    return res.status(200).json({
+    
+    return NextResponse.json({
       message: "Success!",
       description: "Email Sent!",
-    });
+    }, { status: 200 });
+
   } catch (error) {
     console.error("[EMAIL ERROR] Failed to send email:");
     console.error("  Message:", error.message);
     console.error("  Code:", error.code);
     console.error("  Response:", error.response);
     console.error("  Stack:", error.stack);
-    return res.status(500).json({
+    
+    // Fallback if error is related to JSON parsing from Next.js req.json()
+    if (error instanceof SyntaxError) {
+      return NextResponse.json({
+        message: "Invalid JSON format",
+        description: "The request body could not be parsed as JSON.",
+      }, { status: 400 });
+    }
+
+    return NextResponse.json({
       message: "Email sending failed!",
       description: error.message || "Internal Server Error!",
-    });
+    }, { status: 500 });
   }
-};
+}
