@@ -2,6 +2,7 @@
 
 import { useImperativeHandle, forwardRef, useRef, useState } from "react";
 import { useSelector } from "react-redux";
+import { toast } from "sonner";
 import PhoneModal from "@/components/PhoneModal";
 import ItemsSelected from "@/components/ItemsSelected";
 import ConfirmButtonBar from "@/components/ConfirmButtonBar";
@@ -44,11 +45,11 @@ const CartPage = forwardRef((props, ref) => {
           productName: fullProduct?.title || "N/A",
           amount: parseFloat((fullProduct?.price || cartItem.price || "0").replace(/[$,]/g, "")),
           quantity: cartItem.quantity,
-          imageUrl: `https://xportchinacatalog.com${fullProduct?.img}` ||"",
+          imageUrl: fullProduct?.img ? `https://xportchinacatalog.com${fullProduct.img}` : "https://xportchinacatalog.com/placeholder.png",
           sku: fullProduct?.details?.sku || "",
           warranty: fullProduct?.details?.warranty || ".",
           aduana: fullProduct?.moreDetails?.Aduana || ".",
-          category : fullProduct?.category || "",
+          category: fullProduct?.category || "General",
 
          
           
@@ -56,21 +57,40 @@ const CartPage = forwardRef((props, ref) => {
       });
 
      
-      return {
-        name: nameRef.current?.value,
+      const data = {
+        name: nameRef.current?.value?.trim(),
         mobileNumber: phone,
-        email: emailRef.current?.value,
-        additionalNote: noteRef.current?.value,
+        email: emailRef.current?.value?.trim(),
+        additionalNote: noteRef.current?.value?.trim() || "No additional notes",
         country: countryRef.current?.value,
         zipCode: zipRef.current?.value,
-        house: houseRef.current?.value,
-        street: streetRef.current?.value,
-        landmark: landmarkRef.current?.value,
-        state: stateRef.current?.value,
-        city: cityRef.current?.value,
+        house: houseRef.current?.value?.trim(),
+        street: streetRef.current?.value?.trim(),
+        landmark: landmarkRef.current?.value?.trim(),
+        state: stateRef.current?.value?.trim(),
+        city: cityRef.current?.value?.trim(),
         total: totalPrice.toFixed(2),
         products: selectedProducts,
       };
+
+      // Basic client-side validation
+      if (!data.name) {
+        toast.error("Please enter your name.");
+        return null;
+      }
+      
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!data.email || !emailRegex.test(data.email)) {
+        toast.error("Please enter a valid email address.");
+        return null;
+      }
+
+      if (!data.country || !data.city || !data.street) {
+        toast.error("Please fill in all required shipping details.");
+        return null;
+      }
+
+      return data;
     },
   }));
 

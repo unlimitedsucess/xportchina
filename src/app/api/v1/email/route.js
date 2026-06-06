@@ -183,7 +183,7 @@ export async function POST(req) {
 
     const encodedWhatsAppMessage = encodeURIComponent(whatsappMessage);
 
-    const whatsappLink = `https://wa.me/17023197242?text=${encodedWhatsAppMessage}`;
+    const whatsappLink = `https://t.me/Xportchina_exclusivo?text=${encodedWhatsAppMessage}`;
 
     const transporter = nodemailer.createTransport({
       host: "smtp.gmail.com",
