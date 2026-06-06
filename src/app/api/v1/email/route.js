@@ -229,7 +229,7 @@ export async function POST(req) {
                   <tr>
                     <td colspan="2" style="font-size:13px; color:#555; padding-top:8px;">
                       1F - 5F, B1, Comprehensive Building, Gangtou Industrial Zone, Boan District, Shenzhen, China<br />
-                      +17023197242
+                     
                     </td>
                   </tr>
                 </table>

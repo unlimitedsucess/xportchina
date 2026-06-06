@@ -390,7 +390,7 @@ const products = [
   {
     slug: "avalonQ",
     title: "Avalon Q 90 THS. ",
-    price: "$700",
+    price: "$1200",
     img: "/images/products/brandNew/item16.jpg",
     details: {
       sku: "sku: minableCoin: Bitcoin (BTC)",
