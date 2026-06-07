@@ -1,11 +1,13 @@
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 import Joi from 'joi';
+import { Resend } from 'resend';
 
-const adminEmail = ["xportchinaexclusive@gmail.com"];
 const smtpFromEmail = process.env.SMTP_EMAIL || "xportchinaexclusive@gmail.com";
 const smtpFromPassword = process.env.SMTP_PASSWORD;
-const clientUrl = "xportchinacatalog.com";
+const resendFromEmail = process.env.RESEND_FROM_EMAIL || "orders@xportchinacatalog.com";
+const clientUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://xportchinacatalog.com";
+const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
 
 function generateOrderId() {
   const timestamp = Date.now().toString(36); // Convert current time to base36
@@ -27,6 +29,30 @@ function formatTodayDate() {
   };
 
   return `${day}${getOrdinal(day)} ${month}, ${year}`;
+}
+
+function isProviderLimitError(error) {
+  const text = [error?.message, error?.code, error?.response].filter(Boolean).join(" ");
+  return /daily user sending limit exceeded|550-5\.4\.5|sending limit exceeded|too many emails/i.test(text);
+}
+
+async function sendWithResend(options) {
+  if (!resend) {
+    throw new Error("RESEND_API_KEY is not configured.");
+  }
+
+  const { data, error } = await resend.emails.send({
+    from: options.from,
+    to: options.to,
+    subject: options.subject,
+    html: options.html,
+  });
+
+  if (error) {
+    throw new Error(error.message || "Resend email delivery failed.");
+  }
+
+  return data;
 }
 
 export async function POST(req) {
@@ -200,7 +226,7 @@ export async function POST(req) {
     });
 
     const options = {
-      from: `"Xport China" <${smtpFromEmail}>`,
+      from: resend ? resendFromEmail : `"Xport China" <${smtpFromEmail}>`,
       to: [email],
       subject: "Your Xport China Order Estimate",
       html: `<!DOCTYPE html>
@@ -325,11 +351,22 @@ export async function POST(req) {
 </html>`,
     };
 
-    console.log("[EMAIL] Attempting to send email to:", email);
-    const info = await transporter.sendMail(options);
-    console.log("[EMAIL] Sent, messageId:", info.messageId);
-    console.log("[EMAIL] Email sent successfully to:", email);
-    
+    let info;
+
+    try {
+      if (resend) {
+        console.log("[EMAIL] Sending via Resend to:", email);
+        info = await sendWithResend(options);
+      } else {
+        console.log("[EMAIL] Attempting to send via Gmail SMTP to:", email);
+        info = await transporter.sendMail(options);
+      }
+    } catch (sendError) {
+      throw sendError;
+    }
+
+    console.log("[EMAIL] Sent successfully to:", email, info?.messageId || info?.id || "");
+
     return NextResponse.json({
       message: "Success!",
       description: "Email Sent!",
@@ -350,9 +387,13 @@ export async function POST(req) {
       }, { status: 400 });
     }
 
+    const providerLimitExceeded = isProviderLimitError(error);
+
     return NextResponse.json({
-      message: "Email sending failed!",
-      description: error.message || "Internal Server Error!",
-    }, { status: 500 });
+      message: providerLimitExceeded ? "Email provider limit reached" : "Email sending failed!",
+      description: providerLimitExceeded
+        ? "The email provider has reached its daily sending limit. Please contact us directly on WhatsApp/Telegram to proceed with your order."
+        : error.message || "Internal Server Error!",
+    }, { status: providerLimitExceeded ? 503 : 500 });
   }
 }

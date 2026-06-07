@@ -46,8 +46,8 @@ const products = [
     category: "brand-new",
   },
   {
-    slug: "coins-inibox-home-850-mhs2",
-    title: "Coins Inibox HOME 850 MHS",
+    slug: "coins-inibox-home-400-mhs",
+    title: "Coins Inibox HOME 400 MHS",
     price: "$1,600",
     img: "/images/products/brandNew/CoinsINbox.jpeg",
     details: {
