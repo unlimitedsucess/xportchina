@@ -3,11 +3,12 @@ import nodemailer from 'nodemailer';
 import Joi from 'joi';
 import { Resend } from 'resend';
 
-const smtpFromEmail = process.env.SMTP_EMAIL || "xportchinaexclusive@gmail.com";
-const smtpFromPassword = process.env.SMTP_PASSWORD;
-const resendFromEmail = process.env.RESEND_FROM_EMAIL || "orders@xportchinacatalog.com";
-const clientUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://xportchinacatalog.com";
-const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
+const smtpFromEmail = process.env.SMTP_EMAIL?.trim() || "xportchinaexclusive@gmail.com";
+const smtpFromPassword = process.env.SMTP_PASSWORD?.trim();
+const resendFromEmail = process.env.RESEND_FROM_EMAIL?.trim() || "orders@xportchinacatalog.com";
+const clientUrl = process.env.NEXT_PUBLIC_SITE_URL?.trim() || "https://xportchinacatalog.com";
+const resendApiKey = process.env.RESEND_API_KEY?.trim();
+const resend = resendApiKey ? new Resend(resendApiKey) : null;
 
 function generateOrderId() {
   const timestamp = Date.now().toString(36); // Convert current time to base36
